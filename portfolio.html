@@ -76,19 +76,19 @@
           <!-- Radio buttons -->
           <ul class="filter">
             <li class="filter__item">
-              <button class="filter__button" type="button">Все</button>
+              <button class="button filter__button" type="button">Все</button>
             </li>
             <li class="filter__item">
-              <button class="filter__button" type="button">Веб-сайты</button>
+              <button class="button filter__button" type="button">Веб-сайты</button>
             </li>
             <li class="filter__item">
-              <button class="filter__button" type="button">Приложения</button>
+              <button class="button filter__button" type="button">Приложения</button>
             </li>
             <li class="filter__item">
-              <button class="filter__button" type="button">Дизайн</button>
+              <button class="button filter__button" type="button">Дизайн</button>
             </li>
             <li class="filter__item">
-              <button class="filter__button" type="button">Маркетинг</button>
+              <button class="button filter__button" type="button">Маркетинг</button>
             </li>
           </ul>
           <!-- Project-list -->
@@ -290,7 +290,7 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-primery">
+      <div class="container footer-primary">
         <div class="footer-left">
           <!-- Footer logo -->
           <a href="" class="logo footer-left__logo"
@@ -364,9 +364,9 @@
           </ul>
         </div>
         <!-- Footer subscribe -->
-        <form class="subscribe-form">
-          <div class="subscribe-form__field">
-            <label for="subscribe" class="subscribe-form__label"
+        <form class="subscribe">
+          <div class="subscribe__field">
+            <label for="subscribe" class="subscribe__label"
               >подпишитесь на рассылку</label
             >
             <input
@@ -374,12 +374,12 @@
               name="subscribe"
               id="subscribe"
               placeholder="E-mail"
-              class="subscribe-form__input"
+              class="subscribe__input"
             />
           </div>
-          <button type="submit" class="button subscribe-form__button">
+          <button type="submit" class="button subscribe__button">
             Подписаться
-            <svg class="subscribe-form__icon">
+            <svg class="subscribe__icon subscribe__icon--right">
               <use href="./images/sprite.svg#send" width="24" height="24"></use>
             </svg>
           </button>

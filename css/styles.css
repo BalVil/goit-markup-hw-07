@@ -83,8 +83,14 @@ img {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   border: transparent;
   border-radius: 4px;
+  transition: background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
-
+.button:hover,
+.button:focus {
+  background-color: var(--accent-color-secondary);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
 body {
   color: var(--theme-color);
   font-family: "Roboto", "Arial", sans-serif;
@@ -181,10 +187,11 @@ body {
 }
 .authnav__icon {
   height: 16px;
-  margin-right: 10px;
   fill: currentColor;
 }
-
+.authnav__icon--left {
+  margin-right: 10px;
+}
 /* Studio page */
 
 /* hero section */
@@ -224,13 +231,6 @@ body {
 }
 .hero__button {
   padding: 10px 32px;
-  transition: background-color 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
-}
-.hero__button:hover,
-.hero__button:focus {
-  background-color: var(--accent-color-secondary);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* features section */
@@ -272,16 +272,16 @@ body {
   margin-bottom: 0;
 }
 /* activities section */
-.activities-list {
+.activities {
   display: flex;
 }
-.activities-list__item:not(:last-child) {
+.activities__item:not(:last-child) {
   margin-right: 30px;
 }
-.activities-list__thumb {
+.activities__thumb {
   position: relative;
 }
-.activities-list__text-wrapper {
+.activities__text-wrapper {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -291,7 +291,7 @@ body {
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
 }
-.activities-list__text {
+.activities__text {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: bold;
@@ -378,17 +378,17 @@ body {
   fill: var(--bg-color-primary);
 }
 /* client section */
-.client-list {
+.client {
   display: flex;
 }
-.client-list__item {
+.client__item {
   width: 170px;
   height: 92px;
 }
-.client-list__item:not(:last-child) {
+.client__item:not(:last-child) {
   margin-right: 30px;
 }
-.client-list__thumb {
+.client__thumb {
   display: flex;
   width: 100%;
   height: 100%;
@@ -403,8 +403,8 @@ body {
     border 250ms var(--timing-function);
 }
 
-.client-list__thumb:hover,
-.client-list__thumb:focus {
+.client__thumb:hover,
+.client__thumb:focus {
   fill: var(--accent-color-primary);
   border: 1px solid var(--accent-color-primary);
 }
@@ -421,25 +421,22 @@ body {
   margin-right: 8px;
 }
 .filter__button {
+  min-width: auto;
+  display: inline-block;
   padding: 6px 22px;
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.625em;
   letter-spacing: 0.03em;
   text-align: center;
-  cursor: pointer;
   color: var(--secondary-color);
   background-color: var(--bg-color-secondary);
+  box-shadow: none;
   border: 0;
-  border-radius: 4px;
-  transition: color 250ms var(--timing-function),
-    background-color 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 .filter__button:hover,
 .filter__button:focus {
   color: var(--bg-color-primary);
-  background-color: var(--accent-color-primary);
   box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
     0 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -522,7 +519,7 @@ body {
   padding-bottom: 60px;
   background-color: var(--bg-color-footer);
 }
-.footer-primery {
+.footer-primary {
   display: flex;
   align-items: baseline;
 }
@@ -562,13 +559,13 @@ body {
   color: var(--bg-color-primary);
 }
 /* Footer subscribe */
-.subscribe-form {
+.subscribe {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   width: 570px;
 }
-.subscribe-form__label {
+.subscribe__label {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -580,7 +577,7 @@ body {
   text-transform: uppercase;
   color: var(--bg-color-primary);
 }
-.subscribe-form__input {
+.subscribe__input {
   width: 358px;
   margin-right: 12px;
   padding: 15px 16px;
@@ -592,7 +589,7 @@ body {
   transition: outline 250ms var(--timing-function),
     border-color 250ms var(--timing-function);
 }
-.subscribe-form__input::placeholder {
+.subscribe__input::placeholder {
   display: flex;
   align-items: center;
   font-family: inherit;
@@ -601,26 +598,22 @@ body {
   letter-spacing: 0.03em;
   color: var(--footer-links-color);
 }
-.subscribe-form__input:focus {
+.subscribe__input:focus {
   outline: 1px solid var(--accent-color-primary);
   border-color: var(--accent-color-primary);
 }
-.subscribe-form__button {
+.subscribe__button {
   height: 50px;
-  transition: background-color 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
 }
-.subscribe-form__button:hover,
-.subscribe-form__button:focus {
-  background-color: var(--accent-color-secondary);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-}
-.subscribe-form__icon {
-  margin-left: 10px;
+.subscribe__icon {
   height: 24px;
   width: 24px;
   fill: var(--bg-color-primary);
 }
+.subscribe__icon--right {
+  margin-left: 10px;
+}
+
 /* Backdrop*/
 .backdrop {
   position: fixed;
@@ -656,8 +649,6 @@ body {
 }
 .modal__close {
   position: absolute;
-  top: 8px;
-  right: 8px;
   width: 30px;
   height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -666,6 +657,10 @@ body {
   fill: rgba(0, 0, 0, 1);
   cursor: pointer;
   transition: fill 250ms var(--timing-function);
+}
+.modal__close--top-right {
+  top: 8px;
+  right: 8px;
 }
 .modal__close:hover,
 .modal__close:focus {
@@ -676,7 +671,6 @@ body {
   width: 528px;
   height: 581px;
   padding: 40px;
-  /* position: relative; */
 }
 .form__title {
   margin-top: 0;
@@ -769,12 +763,14 @@ body {
   align-items: center;
   width: 16px;
   height: 15px;
-  margin-right: 8px;
   border: 2px solid var(--secondary-color);
   border-radius: 2px;
   transition: border 250ms var(--timing-function),
     outline 250ms var(--timing-function),
     background-color 250ms var(--timing-function);
+}
+.form__icon-checkbox--left {
+  margin-right: 8px;
 }
 .form__input-checkbox:focus + .form__icon-checkbox {
   outline: 1px solid var(--accent-color-primary);
@@ -811,11 +807,4 @@ body {
   margin-right: auto;
   margin-left: auto;
   padding: 10px 32px;
-  transition: background-color 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
-}
-.form__button:hover,
-.form__button:focus {
-  background-color: var(--accent-color-secondary);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
