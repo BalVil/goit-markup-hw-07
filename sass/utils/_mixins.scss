@@ -1,5 +1,18 @@
-@mixin centeredFlex($type: flex) {
+@mixin centeredFlex($type: flex, $value: center) {
   display: $type;
+  align-items: $value;
   justify-content: center;
-  align-items: center;
+}
+@mixin Animation($type) {
+  transition: $type 250ms $timing-function;
+}
+@mixin colorText($color) {
+  color: $color;
+  text-decoration: none;
+}
+@mixin Font() {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.71em;
+  letter-spacing: 0.03em;
 }

@@ -1,0 +1,15 @@
+.logo {
+  margin-right: 93px;
+  font-family: "Raleway", "Verdana", sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1.19em;
+  letter-spacing: 0.03em;
+  color: $accent-color-primary;
+}
+.logo__text {
+  color: $secondary-color;
+}
+.logo__text--inverse {
+  color: $color-light;
+}
