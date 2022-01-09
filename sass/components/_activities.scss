@@ -14,14 +14,12 @@
   @include centeredFlex();
   width: 100%;
   height: 70px;
-  background-color: rgba(47, 48, 58, 0.8);
+  background-color: getColorDark("avgDark-opacity80");
 }
 .activities__text {
   font-weight: bold;
-  font-size: 14px;
-  line-height: 1.14em;
+  @include regularText();
   text-align: center;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: $color-light;
+  color: getColorLight("light");
 }

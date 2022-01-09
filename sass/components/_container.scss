@@ -9,5 +9,5 @@
   display: flex;
 }
 .footer__container {
-  @include centeredFlex($value: baseline);
+  @include centeredFlex($a-items: baseline);
 }

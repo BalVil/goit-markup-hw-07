@@ -19,8 +19,9 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 1px getColorDark("maxDark-opacity12"),
+      0px 4px 4px getColorDark("maxDark-opacity6"),
+      1px 4px 6px getColorDark("maxDark-opacity16");
   }
 }
 // portfolio thumb
@@ -36,12 +37,12 @@
   height: 100%;
   padding: 63px 24px;
   font-size: 18px;
-  line-height: 1.56;
+  line-height: 1.56em;
   letter-spacing: 0.03em;
-  color: $color-light;
-  background-color: rgba(33, 150, 243, 0.9);
+  color: getColorLight("light");
+  background-color: getColorAccent("accent-overlay");
   transform: translateY(100%);
-  transition: transform 250ms $timing-function;
+  @include Animation(transform);
 
   .portfolio__link:hover & {
     transform: translateY(0%);
@@ -50,9 +51,9 @@
 // portfolio text-wrapper
 .portfolio__text-wrapper {
   padding: 20px 24px;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid getColorLight("light-border");
+  border-right: 1px solid getColorLight("light-border");
+  border-bottom: 1px solid getColorLight("light-border");
 }
 .portfolio__name {
   margin-bottom: 4px;
@@ -60,11 +61,11 @@
   font-size: 18px;
   line-height: 2em;
   letter-spacing: 0.06em;
-  color: $secondary-color;
+  color: getColorDark("secondary");
 }
 .portfolio__text {
   font-size: 16px;
   line-height: 1.87em;
   letter-spacing: 0.03em;
-  color: $theme-color;
+  color: getColorDark("theme");
 }

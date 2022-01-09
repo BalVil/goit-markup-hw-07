@@ -6,18 +6,17 @@
   line-height: 1.875em;
   letter-spacing: 0.06em;
   cursor: pointer;
-  color: $color-light;
-  background-color: $accent-color-primary;
-  box-shadow: 0 4px 4px $shadow-color;
+  color: getColorLight("light");
+  background-color: getColorAccent("accent-primary");
+  box-shadow: 0 4px 4px getColorDark("maxDark-opacity15");
   border: transparent;
   border-radius: 4px;
-  transition: background-color 250ms $timing-function,
-    box-shadow 250ms $timing-function;
+  @include Animation(background-color, box-shadow);
 
   &:hover,
   &:focus {
-    background-color: $accent-color-button;
-    box-shadow: 0 4px 4px $shadow-color;
+    background-color: getColorAccent("accent-button");
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   }
 }
 // filter buttons (radio button)
@@ -37,15 +36,16 @@
   line-height: 1.625em;
   letter-spacing: 0.03em;
   text-align: center;
-  color: $secondary-color;
-  background-color: $color-light-bg;
+  color: getColorDark("secondary");
+  background-color: getColorLight("light-bg");
   box-shadow: none;
-  transition: color 250ms $timing-function;
+  @include Animation(color);
 
   &:hover,
   &:focus {
-    color: $color-light;
-    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
-      0 2px 2px rgba(0, 0, 0, 0.12);
+    color: getColorLight("light");
+    box-shadow: 0 3px 1px getColorDark("maxDark-opacity10"),
+      0 1px 2px getColorDark("maxDark-opacity8"),
+      0 2px 2px getColorDark("maxDark-opacity12");
   }
 }

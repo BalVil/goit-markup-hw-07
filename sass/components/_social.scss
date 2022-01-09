@@ -14,19 +14,18 @@
   @include centeredFlex();
   width: 100%;
   height: 100%;
-  @extend %background;
-  fill: $icon-color;
+  @include background;
+  fill: getColorLight("icon");
   border-radius: 50%;
-  transition: background-color 250ms $timing-function,
-    fill 250ms $timing-function;
+  @include Animation(background-color, fill);
 
   &:hover,
   &:focus {
-    background-color: $accent-color-primary;
-    fill: $color-light;
+    background-color: getColorAccent("accent-primary");
+    fill: getColorLight("light");
   }
 }
 .social__link--inverse {
-  background-color: $color-footer-bg-lighten;
-  fill: $color-light;
+  background-color: getColorLight("light-opacity10");
+  fill: getColorLight("light");
 }

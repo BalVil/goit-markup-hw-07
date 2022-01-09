@@ -1,8 +1,5 @@
 .features {
   margin-bottom: -94px;
-  font-size: 14px;
-  line-height: 1.71em;
-  letter-spacing: 0.03em;
 }
 .features-list {
   display: flex;
@@ -18,14 +15,17 @@
   @include centeredFlex();
   height: 120px;
   margin-bottom: 30px;
-  background-color: $color-light-bg;
+  background-color: getColorLight("light-bg");
   border-radius: 4px;
 }
 .features-list__title {
   margin-bottom: 10px;
-  font-weight: bold;
   font-size: 14px;
   line-height: 1.14em;
+  @include titleFont($t-a: start);
+  color: getColorDark("secondary");
   text-transform: uppercase;
-  color: $secondary-color;
+}
+.features-list__text {
+  @include regularText($l-h: 1.71em);
 }

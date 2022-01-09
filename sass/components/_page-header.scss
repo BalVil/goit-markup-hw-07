@@ -1,9 +1,7 @@
 .page-header {
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14em;
-  letter-spacing: 0.02em;
-  border-bottom: 1px solid #ececec;
+  @include regularText($l-s: 0.02em);
+  border-bottom: 1px solid getColorLight("light-border");
 }
 // navbar in header
 .navbar {
@@ -22,17 +20,17 @@
 }
 .navbox__link {
   position: relative;
-  color: $secondary-color;
-  transition: color 250ms $timing-function;
+  color: getColorDark("secondary");
+  @include Animation(color);
 
   &:hover,
   &:focus {
-    color: $accent-color-primary;
+    color: getColorAccent("accent-primary");
   }
 }
 .navbox__link--current {
   position: relative;
-  color: $accent-color-primary;
+  color: getColorAccent("accent-primary");
 
   &::after {
     content: "";
@@ -41,7 +39,7 @@
     width: 100%;
     height: 4px;
     bottom: 0;
-    background-color: $accent-color-primary;
+    background-color: getColorAccent("accent-primary");
     border-radius: 2px;
   }
 }
@@ -56,12 +54,12 @@
 }
 .authnav__link {
   @include centeredFlex();
-  color: $theme-color;
-  transition: color 250ms $timing-function;
+  color: getColorDark("theme");
+  @include Animation(color);
 
   &:hover,
   &:focus {
-    color: $accent-color-primary;
+    color: getColorAccent("accent-primary");
   }
 }
 .authnav__icon {
